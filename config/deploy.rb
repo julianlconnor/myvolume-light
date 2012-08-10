@@ -24,4 +24,4 @@ namespace :deploy do
   end
 end
 
-after :deploy, :compile
+after :deploy, "deploy:compile"
