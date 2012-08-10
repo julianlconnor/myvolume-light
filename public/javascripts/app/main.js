@@ -12,7 +12,8 @@ define(['app/init', 'app/workspace'], function() {
                 supplied: "mp3"
             };
 
-            myvolume.PLAYER.jPlayer(attrs);
+            console.log("myvolume.player", myvolume.PLAYER);
+            (myvolume.PLAYER || $('#jquery_jplayer_1')).jPlayer(attrs);
 		
             /* This starts the backbone app */
             myvolume.routers.workspace = new myvolume.routers.Workspace();

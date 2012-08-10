@@ -23,6 +23,8 @@ define(['app/init', 'app/charts.view', 'app/songs.view'], function() {
         playPause: function(evt) {
             if ( evt.keyCode !== 32 ) return;
 
+            if ( !myvolume.PLAYER ) myvolume.PLAYER = $('#jquery_jplayer_1');
+
             evt.preventDefault();
 
             if ( myvolume.PLAYER.data('jPlayer').status.paused )

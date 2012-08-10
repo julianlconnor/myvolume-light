@@ -18,7 +18,7 @@ define(['app/init', 'app/chart.model'], function() {
 
             formatted_date = year +"-"+ month +"-"+ day;
 
-            return myvolume.API_ROOT + "/charts?sortBy=publishDate%20desc&publishDateStart="+ formatted_date +"&publishDateEnd=" + formatted_date + "&page=" + this.page++;
+            return myvolume.API_ROOT + "/charts?sortBy=publishDate%20desc&publishDateStart="+ formatted_date +"&page=" + this.page++;
 
         },
 

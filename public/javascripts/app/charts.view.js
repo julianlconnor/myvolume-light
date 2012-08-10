@@ -17,6 +17,7 @@ define(['app/init', 'app/chart.collection', 'app/chart.view'], function() {
 
             this.$el.empty();
             this.$el.html('<div class="loader"><img src="/images/ajax-loader.gif" /></div>');
+
             $.when(this.collection.fetch()).then(this.addAll);
 
             return this;

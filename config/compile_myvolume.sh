@@ -7,9 +7,11 @@ echo "$COMPILE_CMD"
 $COMPILE_CMD
 
 echo "**** Compiling App ****"
-COMPILE_CMD="node public/javascripts/lib/r.js -o name=app/main baseUrl=public/javascripts out=public/javascripts/myvolume.app.min.js"
+COMPILE_CMD="node public/javascripts/lib/r.js -o name=app/main baseUrl=public/javascripts out=public/javascripts/myvolume.app.min.js paths.requireLib=require include=requireLib insertRequire=app/main"
 echo "$COMPILE_CMD"
 $COMPILE_CMD
+
+#node /ebs/appvenmo/api/static/js/lib/r.js -o name=main out=/ebs/appvenmo/api/static/js/venmo.app.min.js baseUrl=/ebs/appvenmo/api/static/js/app paths.requireLib=/ebs/appvenmo/api/static/js/lib/require include=requireLib insertRequire=main
 
 
 echo "**** Compiling CSS ****"
