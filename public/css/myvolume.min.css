@@ -148,7 +148,7 @@ a:hover{color:#0050a3;text-decoration:underline;}
 .clearfix{display:block;}
 html[xmlns] .clearfix{display:block;}
 * html .clearfix{height:1%;}
-.container{width:750px;margin:0 auto;zoom:1;margin-bottom:15px;}
+.container{width:750px;margin:20px 0 15px 320px zoom: 1;}
 table tr.playing,table tr:hover{background:-webkit-linear-gradient(top, #beffe8, #b2ffd1);background:-moz-linear-gradient(top, #beffe8, #b2ffd1);text-shadow:1px 1px 0px rgba(255, 255, 255, 0.3);}
 .heart,.playing .heart,.playing:hover .heart{height:32px;width:32px;background:url("/images/heart.png");background-repeat:no-repeat;background-position:50% 50%;}
 .heart.active,.playing .heart.active,.playing:hover .heart.active{background:url("/images/heartactive.png");background-repeat:no-repeat;background-position:50% 50%;}
@@ -156,7 +156,7 @@ table tr.playing,table tr:hover{background:-webkit-linear-gradient(top, #beffe8,
 .heart.active:hover,.playing .heart.active:hover{background:url("/images/heartactivehover.png");background-repeat:no-repeat;background-position:50% 50%;}
 .download,.playing .download,.playing:hover .download{height:32px;width:32px;background:url("/images/download.png");background-repeat:no-repeat;background-position:50% 50%;}
 .download:hover,.playing .download:hover,.playing:hover .download:hover{background:url("/images/download-hover.png");background-repeat:no-repeat;background-position:50% 50%;}
-.topbar-logo{width:200px;position:fixed;top:20px;left:20px;}
+.topbar-logo{width:200px;position:fixed;top:20px;left:60px;}
 .nav li:last-child,.secondary-nav li:last-child{margin-right:0;}
 .secondary-nav{margin-right:-4px;}
 .secondary-nav .avatar{margin-top:-6px;margin-right:10px;}
