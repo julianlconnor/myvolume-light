@@ -148,7 +148,7 @@ a:hover{color:#0050a3;text-decoration:underline;}
 .clearfix{display:block;}
 html[xmlns] .clearfix{display:block;}
 * html .clearfix{height:1%;}
-.container{width:750px;margin:20px 0 15px 320px zoom: 1;}
+.container{width:750px;margin:20px 0 15px 320px;zoom:1;}
 table tr.playing,table tr:hover{background:-webkit-linear-gradient(top, #beffe8, #b2ffd1);background:-moz-linear-gradient(top, #beffe8, #b2ffd1);text-shadow:1px 1px 0px rgba(255, 255, 255, 0.3);}
 .heart,.playing .heart,.playing:hover .heart{height:32px;width:32px;background:url("/images/heart.png");background-repeat:no-repeat;background-position:50% 50%;}
 .heart.active,.playing .heart.active,.playing:hover .heart.active{background:url("/images/heartactive.png");background-repeat:no-repeat;background-position:50% 50%;}
