@@ -156,17 +156,11 @@ table tr.playing,table tr:hover{background:-webkit-linear-gradient(top, #beffe8,
 .heart.active:hover,.playing .heart.active:hover{background:url("/images/heartactivehover.png");background-repeat:no-repeat;background-position:50% 50%;}
 .download,.playing .download,.playing:hover .download{height:32px;width:32px;background:url("/images/download.png");background-repeat:no-repeat;background-position:50% 50%;}
 .download:hover,.playing .download:hover,.playing:hover .download:hover{background:url("/images/download-hover.png");background-repeat:no-repeat;background-position:50% 50%;}
-.topbar .container{display:-webkit-box;display:-moz-box;display:box;-webkit-box-orient:horizontal;-moz-box-orient:horizontal;box-orient:horizontal;margin-top:15px;}
-.topbar li{float:left;}
-.topbar .logo{width:200px;height:25px;padding:0 36px;margin-right:30px;-webkit-box-flex:1;-moz-box-flex:1;box-flex:1;}
-.topbar ul{margin-top:6px;}
-.topbar li{margin-right:10px;}
+.topbar-logo{width:200px;position:fixed;top:20px;left:20px;}
 .nav li:last-child,.secondary-nav li:last-child{margin-right:0;}
 .secondary-nav{margin-right:-4px;}
 .secondary-nav .avatar{margin-top:-6px;margin-right:10px;}
 .secondary-nav .avatar img{border-radius:5px;height:24px;}
-.topbar .nav a,.secondary-nav a{color:#000;padding:4px 15px;background-color:whiteSmoke;border-radius:2px;border:1px solid #CCC;box-shadow:inset 0px 0px 3px 1px #eeeeee;}
-.topbar a:hover{color:#8b8b8b;text-decoration:none;}
 #charts{margin:0 0 25px 0;}
 #chart_wrapper h2{font-size:2em;font-weight:bold;color:#333;padding:10px;padding:10px;margin-bottom:10px;}
 .chart{border:solid 1px #ccc;border-radius:2px;-moz-border-radius:2px;transition:0.2s linear all;-webkit-transition:0.2s linear all;-moz-transition:0.2s linear all;margin-bottom:10px;}
