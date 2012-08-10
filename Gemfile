@@ -23,6 +23,7 @@ end
 gem 'jquery-rails'
 gem 'therubyracer'
 gem 'less'
+gem 'mongrel'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -31,7 +32,7 @@ gem 'less'
 # gem 'jbuilder'
 
 # Use unicorn as the app server
-gem 'unicorn'
+#gem 'unicorn'
 
 # Deploy with Capistrano
 gem 'capistrano'
