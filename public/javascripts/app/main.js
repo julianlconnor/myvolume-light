@@ -13,7 +13,8 @@ define(['app/init', 'app/workspace'], function() {
             };
 
             console.log("myvolume.player", myvolume.PLAYER);
-            (myvolume.PLAYER || $('#jquery_jplayer_1')).jPlayer(attrs);
+            myvolume.PLAYER = $('#jquery_jplayer_1');
+            myvolume.PLAYER.jPlayer(attrs);
 		
             /* This starts the backbone app */
             myvolume.routers.workspace = new myvolume.routers.Workspace();
