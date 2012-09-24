@@ -6,7 +6,9 @@ define(['app/init', 'app/song.collection', 'app/song.view'], function() {
         initialize: function(chartId) {
              console.log("ChartSongsView::Init");
 
-             _.bindAll(this, "render", "addOne", "addAll");
+             _.bindAll(this, "render",
+                             "addOne",
+                             "addAll");
 
              this.songs = new myvolume.collections.Songs();
              this.songs.on('reset', this.addAll);
@@ -37,6 +39,8 @@ define(['app/init', 'app/song.collection', 'app/song.view'], function() {
 
             return this;
         }
+
+
         
        
     });
