@@ -14,16 +14,21 @@ define(['app/init'], function() {
             console.log("ChartItemView::Init");
             _.bindAll(this,
                 'render',
-                'triggerClicked');
+                'triggerClicked',
+                'showSpinner',
+                'hideSpinner');
 
             this.model.on('activate', this.activate);
             this.model.on('deactivate', this.deactivate);
 
             this.songs = new myvolume.views.Songs();
+
+            this.songs.on('fetching', this.showSpinner);
+            this.songs.on('done', this.hideSpinner);
         },
      
         render: function() {
-            console.log("ChartItemView::Render");
+            console.log("ChartItemView::Render", this.model.attributes);
 
             this.$el.addClass(this.model.get('id')).attr('title', this.model.get('name')).html(this.template(this.model.toJSON()));
             
@@ -49,6 +54,15 @@ define(['app/init'], function() {
             }
 
             this.trigger('chart:clicked', this.model);
+        },
+
+        showSpinner: function() {
+            console.log('showSPinner');
+            this.$('.overlay').fadeIn();
+        },
+        hideSpinner: function() {
+            console.log('hideSPinner');
+            this.$('.overlay').fadeOut();
         }
 
     });

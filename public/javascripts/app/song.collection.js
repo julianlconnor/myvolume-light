@@ -5,7 +5,7 @@ define(['app/init', 'app/song.model'], function() {
             _.bindAll(this, 'url');
         },
         url: function() {
-            return myvolume.API_ROOT + "/beatport/chart?id=" + this.id;
+            return myvolume.API_ROOT + "/catalog/3/beatport/chart?id=" + this.id;
         },
         parse: function(response) {
             return response.results.tracks;

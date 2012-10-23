@@ -1,19 +1,31 @@
-define(['app/init', 'app/charts.view', 'app/songs.view'], function() {
+define(['app/init', 'app/charts.view', 'app/songs.view', 'app/filters.view'], function() {
     myvolume.routers.Workspace = Backbone.Router.extend({
         routes: {
             "charts/:id"  : "renderChart",
-            ""            : "renderIndex"
+            ""            : "renderChartsFeatured"
         },
 
         initialize: function() {
-            _.bindAll(this, "renderIndex", "renderChart", "playPause");
+            _.bindAll(this, "renderChartsFeatured", "renderChartsAll", "playPause");
 
             myvolume.views.charts = new myvolume.views.Charts();
+            /*
+            * Place filters on page.
+            */
+            myvolume.views.filters = new myvolume.views.Filters();
+            myvolume.views.filters.render();
+
             $(document).on("keydown", this.playPause);
+            $(document).on('filter:chart:featured', this.renderChartsFeatured);
+            $(document).on('filter:chart:all', this.renderChartsAll);
         },
 
-        renderIndex: function() {
-            myvolume.views.charts.render();
+        renderChartsFeatured: function() {
+            myvolume.views.charts.renderFeatured();
+        },
+
+        renderChartsAll: function() {
+            myvolume.views.charts.renderAll();
         },
 
         renderChart: function(chart_id) {

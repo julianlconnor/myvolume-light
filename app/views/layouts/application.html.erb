@@ -35,6 +35,7 @@
 
         <div class="topbar-logo">
             <a href="/"><%= image_tag('myvolume-logo.png') %></a>
+            <div id="filters" class="filter-wrapper"></div>
         </div>
       
         <div id="content" class="container clearfix">
@@ -75,6 +76,7 @@
 
     <script type="text/template" id="chart-item-template">
         <div class="top-wrapper">
+          <div class="overlay" style="display: none;"><img src="/images/ajax-loader.gif" /></div>
           <div class="clearfix top">
             <img class="chart_image" src="{{= images.xlarge.secureUrl }}"/>
             <div class="chart_text">
@@ -99,6 +101,10 @@
 
     <script type="text/template" id="genre-item-template">
         <span class="genre">{{= name }}</span>
+    </script>
+
+    <script type="text/template" id="chart-filter">
+      <li class="{{= active ? 'active' : '' }}" data-url="{{= data_url }}">{{= name }}</li>
     </script>
 
     <script type="text/template" id="song-item-template">

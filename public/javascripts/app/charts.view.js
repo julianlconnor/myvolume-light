@@ -2,7 +2,7 @@ define(['app/init', 'app/chart.collection', 'app/chart.view'], function() {
     myvolume.views.Charts = Backbone.View.extend({
         el: '#charts',
 
-        initialize: function() {
+        initialize: function(options) {
             console.log("ChartsView::Init");
             _.bindAll(this, "render",
                             "addAll", 
@@ -10,7 +10,9 @@ define(['app/init', 'app/chart.collection', 'app/chart.view'], function() {
                             "infiniteScroll",
                             "playNext");
 
-            this.collection = new myvolume.collections.Charts();
+            this.collections = {};
+            this.collections.all = new myvolume.collections.ChartsAll();
+            this.collections.featured = new myvolume.collections.ChartsFeatured();
 
             /* Infinite Scroll */
             $(document).on('scroll', this.infiniteScroll);
@@ -19,21 +21,36 @@ define(['app/init', 'app/chart.collection', 'app/chart.view'], function() {
             myvolume.PLAYER.on($.jPlayer.event.ended + ".repeat", this.playNext);
         },
 
-        render: function() {
+        renderFeatured: function() {
+            this.activeCollection = 'featured';
+            this.render(this.collections.featured);
+        },
+
+        renderAll: function() {
+            this.activeCollection = 'all';
+            this.render(this.collections.all);
+        },
+        
+        render: function(collection) {
             console.log("ChartsView::Render");
+            var _this = this, fn;
 
             this.$el.empty();
             this.$el.html('<div class="loader"><img src="/images/ajax-loader.gif" /></div>');
+            
+            fn = function() {
+                _this.addAll(collection);
+            };
 
-            $.when(this.collection.fetch()).then(this.addAll);
+            $.when(collection.fetch()).then(fn);
 
             return this;
         },
-        
-        addAll: function(callback) {
+
+        addAll: function(collection) {
             this.fetching = false;
             this.$el.empty();
-            this.collection.each(this.addOne);
+            collection.each(this.addOne);
 
 
             return this;
@@ -48,7 +65,7 @@ define(['app/init', 'app/chart.collection', 'app/chart.view'], function() {
         },
 
         infiniteScroll: function(evt) {
-            if ( this.fetching ) return;
+            if ( this.fetching || this.activeCollection === 'featured' ) return;
 
 
             var scrollTop = $(document).scrollTop(),

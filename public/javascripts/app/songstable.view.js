@@ -1,6 +1,6 @@
 define(['app/init', 'app/song.collection', 'app/song.view'], function() {
     myvolume.views.SongsTable = Backbone.View.extend({
-        id: 'songs',
+
         tagName: 'table',
 
         initialize: function(chartId) {
@@ -16,9 +16,13 @@ define(['app/init', 'app/song.collection', 'app/song.view'], function() {
 
         render: function(id) {
             console.log("ChartSongsView::render");
+            var dfd, _this = this;
 
+            this.trigger('fetching');
             this.songs.id = id;
-            this.songs.fetch();
+            dfd = this.songs.fetch();
+
+            dfd.always(function() { _this.trigger('done'); });
 
             return this;
         },
