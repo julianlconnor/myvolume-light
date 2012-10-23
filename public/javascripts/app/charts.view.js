@@ -70,10 +70,10 @@ define(['app/init', 'app/chart.collection', 'app/chart.view'], function() {
 
             var scrollTop = $(document).scrollTop(),
                 docHeight = $(document).height(),
-                winHeight = $(window).height();
+                winHeight = $(window).height(),
+                col       = this.collections.all;
 
-            if ( scrollTop >= docHeight - winHeight - 100 &&
-                    this.collection.page < this.collection.totalPages ) {
+            if ( scrollTop >= docHeight - winHeight - 100 && col.page < col.totalPages ) {
                 this.fetching = true;
                 this.$el.append('<div class="infinite_loader"><img src="/images/ajax-loader.gif" /></div>');
                 $.when(this.collection.fetch({add: true})).then(this.addAll);
