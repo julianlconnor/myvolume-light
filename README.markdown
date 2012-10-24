@@ -1,4 +1,4 @@
-# (myvolu.me)[http://myvolu.me]
+http://myvolu.me
 
 Side project of mine that replicates my most tried and true strategy of finding new music that fits my tastes.
 
