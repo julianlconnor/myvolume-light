@@ -6,7 +6,11 @@ define(['app/init', 'app/charts.view', 'app/songs.view', 'app/filters.view'], fu
         },
 
         initialize: function() {
-            _.bindAll(this, "renderChartsFeatured", "renderChartsAll", "playPause");
+            _.bindAll(this, "renderChartsFeatured",
+                            "renderChartsAll",
+                            "playPause",
+                            "prefetchImages",
+                            "prefetchImage");
 
             myvolume.views.charts = new myvolume.views.Charts();
             /*
@@ -18,6 +22,8 @@ define(['app/init', 'app/charts.view', 'app/songs.view', 'app/filters.view'], fu
             $(document).on("keydown", this.playPause);
             $(document).on('filter:chart:featured', this.renderChartsFeatured);
             $(document).on('filter:chart:all', this.renderChartsAll);
+
+            this.prefetchImages();
         },
 
         renderChartsFeatured: function() {
@@ -43,6 +49,18 @@ define(['app/init', 'app/charts.view', 'app/songs.view', 'app/filters.view'], fu
                 myvolume.PLAYER.jPlayer('play');
             else
                 myvolume.PLAYER.jPlayer('pause');
+        },
+
+        prefetchImages: function() {
+            var images = ['download.png', 'download-hover.png'];
+            _.each(images, this.prefetchImage);
+        },
+
+        prefetchImage: function(image_uri) {
+            console.log("[pre-f] : " + image_uri);
+            var img = new Image(),
+                prefix = '/images/';
+            img.src = prefix + image_uri;
         }
     });
 });

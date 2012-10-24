@@ -128,5 +128,12 @@
       <script data-main="/javascripts/config.js" src="/javascripts/require.js"></script>
     <% else %>
       <script src="/javascripts/myvolume.app.min.js" type="text/javascript"></script>
+      <script type="text/javascript">
+        /*
+        * Hide all console logs in prod.
+        */
+        window.console = {};
+        console.log = function() {};
+      </script>
     <% end %>
 </html>

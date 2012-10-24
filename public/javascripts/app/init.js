@@ -17,4 +17,5 @@ define([], function() {
     $(function() {
         myvolume.PLAYER = $("#jquery_jplayer_1");
     });
+
 });
