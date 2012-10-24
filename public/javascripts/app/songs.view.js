@@ -14,7 +14,6 @@ define(['app/init', 'app/songstable.view', 'app/workspace'], function() {
         },
 
         render: function(id) {
-            myvolume.routers.workspace.navigate('charts/' + id);
             this.$el.empty();
             this.view.render(id);
             return this;
