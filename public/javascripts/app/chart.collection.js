@@ -39,6 +39,7 @@ define(['app/init', 'app/chart.model'], function() {
 
         initialize: function(options) {
             _.bindAll( this, 'changeRoot');
+            this.page = 0;
         },
 
         url: function() {
